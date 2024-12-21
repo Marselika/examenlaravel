@@ -1,84 +1,46 @@
 # Examen
 ## Arhitectura aplicatie
-## Migratii
-### create_categories_table.php
-```php
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+### Modele
+- Category.php
+- MenuItem.php
 
-return new class extends Migration
-{
-    /**
-     * Run the migrations.
-     */
-    public function up()
-    {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->timestamps();
-        });
-    }
+### Controllers
+- CategoryController.php
+- MenuItemController.php
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('categories');
-    }
-};
-```
-### create_menu_items_table.php
-```php
-<?php
+### Views
+- /categories/create.blade.php
+- /categories/index.blade.php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+### Schema bazei de date
+![image](https://github.com/user-attachments/assets/61129600-57f5-43ca-8075-c7373a484308)
 
-return new class extends Migration
-{
-    /**
-     * Run the migrations.
-     */
-    public function up()
-    {
-        Schema::create('menu_items', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->decimal('price', 8, 2);
-            $table->string('image_path')->nullable();
-            $table->timestamps();
-        });
-    }
+### Tipuri de stocare
+- Baza de date, in baza de date noi stocam informatia despre categoriile meniului si insusi meniul cu poze, descriere, denumire.
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('menu_items');
-    }
-};
-```
-## Modele
-### Category.php
+### Date pentru cache
+- Lista categoriilor (refresh la 24h)
+- Meniurile populare (refresh la 1h)
+
+### Stack-ul tehnologic utilizat
+- Laravel 10.x
+- PHP 8.1+
+- MySQL
+- Bootstrap pentru frontend
+- XAMPP ca server local
+
+
+### MenuItem.php
 ```php
 
 ```
 
+### MenuItem.php
 ```php
 
 ```
 
-```php
-
-```
+### MenuItem.php
 ```php
 
 ```
