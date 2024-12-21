@@ -30,14 +30,14 @@
 - XAMPP ca server local
 
 ### Comenzi Utilizate
-composer create-project laravel/laravel menu-app
-php artisan make:model Category -m
-php artisan make:model MenuItem -m
-php artisan make:controller CategoryController --resource
-php artisan make:controller MenuItemController --resource
-php artisan migrate
-php artisan serv
-php artisan make:seeder CategorySeeder
+- composer create-project laravel/laravel menu-app
+- php artisan make:model Category -m
+- php artisan make:model MenuItem -m
+- php artisan make:controller CategoryController --resource
+- php artisan make:controller MenuItemController --resource
+- php artisan migrate
+- php artisan serv
+- php artisan make:seeder CategorySeeder
 
 ### Metodele
 ```php
