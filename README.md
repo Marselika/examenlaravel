@@ -161,7 +161,7 @@ class MenuItem extends Model
 ```
 
 
-### Relatii Cod
+### Migratie Cod
 ```php
 <?php
 
